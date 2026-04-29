@@ -1,375 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CallHero — Never Miss Another Call</title>
-    <meta name="description" content="AI phone agent for local businesses. Answers every call, qualifies every lead, books every appointment — 24/7/365.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style-guide.css">
-    <style>
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 80px 24px;
-            background: linear-gradient(135deg, var(--color-dark) 0%, #1a1a2e 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(255,51,102,0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero h1 {
-            color: white;
-            font-size: 56px;
-            max-width: 800px;
-            margin-bottom: 24px;
-        }
-        .hero .stat-highlight {
-            font-family: var(--font-mono);
-            font-size: 72px;
-            font-weight: 700;
-            color: var(--color-primary);
-            line-height: 1;
-            margin: 24px 0;
-        }
-        .hero p {
-            font-size: 20px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-bottom: 40px;
-        }
-        .section-dark {
-            background: var(--color-dark);
-            color: white;
-            padding: 80px 24px;
-        }
-        .section-light {
-            background: var(--color-light);
-            padding: 80px 24px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 48px;
-            margin-top: 48px;
-        }
-        .pricing-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            position: relative;
-        }
-        .pricing-card.featured {
-            border: 3px solid var(--color-primary);
-            transform: scale(1.05);
-        }
-        .pricing-card.featured::after {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--color-primary);
-            color: white;
-            padding: 4px 16px;
-            border-radius: var(--radius-full);
-            font-size: 12px;
-            font-weight: 700;
-        }
-        .price {
-            font-family: var(--font-mono);
-            font-size: 48px;
-            font-weight: 700;
-            color: var(--color-dark);
-            margin: 16px 0;
-        }
-        .price span {
-            font-size: 18px;
-            color: var(--color-text-light);
-        }
-        .faq-item {
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding: 24px 0;
-        }
-        .faq-item h4 {
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-item h4::after {
-            content: '+';
-            font-size: 24px;
-            color: var(--color-primary);
-        }
-        .cta-section {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            padding: 80px 24px;
-            text-align: center;
-            color: white;
-        }
-        .cta-section h2 {
-            color: white;
-            font-size: 42px;
-            margin-bottom: 24px;
-        }
-        .cta-section .btn {
-            background: white;
-            color: var(--color-primary);
-            font-size: 18px;
-            padding: 20px 48px;
-        }
-        .cta-section .btn:hover {
-            background: var(--color-light);
-            transform: translateY(-2px);
-        }
-        footer {
-            background: var(--color-dark);
-            color: rgba(255,255,255,0.6);
-            padding: 40px 24px;
-            text-align: center;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Call Hero — Your AI Receptionist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    .spa-loading {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; background: #FAF7F2;
+      font-family: 'Inter', sans-serif; color: #6E6A62;
+    }
+  </style>
 </head>
-<body>
+<body class="theme-light mascot-feat">
+  <div class="spa-loading">
+    <div>Loading CallHero…</div>
+  </div>
+  <div id="root"></div>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>62% of calls to local businesses go unanswered.</h1>
-    <div class="stat-highlight">$100K+</div>
-    <p>walking out the door every year. CallHero is an AI phone agent that answers every call, qualifies every lead, and books every appointment — 24/7/365.</p>
-    <a href="#demo" class="btn btn-primary" style="font-size: 18px; padding: 20px 48px;">See It Live →</a>
-    <p style="margin-top: 16px; font-size: 14px; opacity: 0.6;">14-day free trial. No credit card.</p>
-</section>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script>
+    // GitHub Pages SPA support: preserve the actual URL from 404 redirect
+    (function() {
+      var redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        // Replace current URL without reloading
+        window.history.replaceState({}, '', redirect);
+      }
+    })();
+  </script>
 
-<!-- PROBLEM -->
-<section class="section-dark">
-    <div class="container">
-        <h2 style="text-align: center; color: white;">Your options today suck.</h2>
-        <div class="grid-3">
-            <div class="card" style="background: var(--color-dark-secondary);">
-                <h4 style="color: var(--color-warning);">❌ Hire a Receptionist</h4>
-                <p>$35-45K/year. 9-5 only. Sick days. Lunch breaks. Misses every call after hours.</p>
-            </div>
-            <div class="card" style="background: var(--color-dark-secondary);">
-                <h4 style="color: var(--color-warning);">❌ Call Center</h4>
-                <p>$800-2K/month. Robotic scripts. Zero context about YOUR business. Customers hang up.</p>
-            </div>
-            <div class="card" style="background: var(--color-dark-secondary);">
-                <h4 style="color: var(--color-warning);">❌ Voicemail</h4>
-                <p>Free. But 62% of callers hang up and call your competitor. You're paying to lose leads.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SOLUTION -->
-<section class="section-light">
-    <div class="container">
-        <h2 style="text-align: center;">CallHero answers every call. Instantly.</h2>
-        <div class="grid-2" style="align-items: center;">
-            <div>
-                <h3>How It Works</h3>
-                <div style="margin-top: 24px;">
-                    <div style="display: flex; gap: 16px; margin-bottom: 24px;">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
-                        <div>
-                            <h4>Call comes in</h4>
-                            <p style="color: var(--color-text-light);">CallHero answers in 0.3 seconds. Every time. 24/7/365.</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 16px; margin-bottom: 24px;">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
-                        <div>
-                            <h4>Qualifies the lead</h4>
-                            <p style="color: var(--color-text-light);">Captures name, phone, issue, service area. No missed details.</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 16px; margin-bottom: 24px;">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
-                        <div>
-                            <h4>Books the appointment</h4>
-                            <p style="color: var(--color-text-light);">Syncs with your calendar in real-time. No back-and-forth.</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; gap: 16px;">
-                        <div style="width: 40px; height: 40px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</div>
-                        <div>
-                            <h4>Logs everything</h4>
-                            <p style="color: var(--color-text-light);">Full transcript + lead details sent to your phone. You're always in the loop.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="text-align: center;">
-                <div style="font-size: 72px; margin-bottom: 16px;">📞</div>
-                <h3>Try the Demo</h3>
-                <p style="margin: 16px 0;">Call our demo line and talk to CallHero yourself. It's a real AI — not a recording.</p>
-                <div style="font-family: var(--font-mono); font-size: 32px; font-weight: 700; color: var(--color-primary); margin: 24px 0;">
-                    (310) 555-0199
-                </div>
-                <p style="font-size: 14px; color: var(--color-text-light);">Demo available 24/7</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRICING -->
-<section class="section-light" style="background: white;">
-    <div class="container">
-        <h2 style="text-align: center;">Simple pricing. No hidden fees.</h2>
-        <p style="text-align: center; color: var(--color-text-light); margin-top: 8px;">14-day free trial. No setup fee. Cancel anytime.</p>
-        <div class="grid-3" style="margin-top: 48px;">
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <div class="price">$497<span>/mo</span></div>
-                <ul style="text-align: left; list-style: none; margin: 24px 0;">
-                    <li style="padding: 8px 0;">✅ AI receptionist</li>
-                    <li style="padding: 8px 0;">✅ Lead qualification</li>
-                    <li style="padding: 8px 0;">✅ Appointment booking</li>
-                    <li style="padding: 8px 0; color: var(--color-text-light);">❌ CRM integration</li>
-                    <li style="padding: 8px 0; color: var(--color-text-light);">❌ SMS follow-up</li>
-                </ul>
-                <a href="#" class="btn btn-secondary" style="width: 100%;">Start Free Trial</a>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Pro</h3>
-                <div class="price">$997<span>/mo</span></div>
-                <ul style="text-align: left; list-style: none; margin: 24px 0;">
-                    <li style="padding: 8px 0;">✅ Everything in Starter</li>
-                    <li style="padding: 8px 0;">✅ CRM integration</li>
-                    <li style="padding: 8px 0;">✅ SMS follow-up</li>
-                    <li style="padding: 8px 0;">✅ Custom knowledge base</li>
-                    <li style="padding: 8px 0; color: var(--color-text-light);">❌ Outbound lead gen</li>
-                </ul>
-                <a href="#" class="btn btn-primary" style="width: 100%;">Start Free Trial</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Elite</h3>
-                <div class="price">$1,997<span>/mo</span></div>
-                <ul style="text-align: left; list-style: none; margin: 24px 0;">
-                    <li style="padding: 8px 0;">✅ Everything in Pro</li>
-                    <li style="padding: 8px 0;">✅ Outbound lead gen</li>
-                    <li style="padding: 8px 0;">✅ Voice personality matching</li>
-                    <li style="padding: 8px 0;">✅ Priority support</li>
-                    <li style="padding: 8px 0;">✅ Dedicated account manager</li>
-                </ul>
-                <a href="#" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- DEMO SECTION -->
-<section id="demo" class="section-dark" style="text-align: center;">
-    <div class="container">
-        <h2 style="color: white;">Hear CallHero in action.</h2>
-        <p style="opacity: 0.8; max-width: 600px; margin: 16px auto 40px;">Real call. Real AI. Real booking. Listen to how CallHero handles a burst pipe emergency at 11pm.</p>
-        
-        <div style="max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.05); border-radius: 16px; padding: 40px; text-align: left;">
-            <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                <div style="width: 40px; height: 40px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">🤖</div>
-                <div>
-                    <strong style="color: white;">CallHero</strong>
-                    <p style="font-size: 12px; opacity: 0.6;">AI Phone Agent</p>
-                </div>
-            </div>
-            <div style="background: var(--color-dark-secondary); padding: 20px; border-radius: 12px; margin-bottom: 12px;">
-                <p style="color: white; margin: 0;">"Thank you for calling AquaFlow Plumbing! This is Alex. How can I help you today?"</p>
-            </div>
-            <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                <div style="width: 40px; height: 40px; background: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">👤</div>
-                <div style="background: #333; padding: 12px 16px; border-radius: 12px;">
-                    <p style="color: white; margin: 0;">"Hi, I have a burst pipe in my bathroom. Water is everywhere."</p>
-                </div>
-            </div>
-            <div style="background: var(--color-dark-secondary); padding: 20px; border-radius: 12px; margin-bottom: 12px;">
-                <p style="color: white; margin: 0;">"I'm so sorry to hear that. Let me get some information so we can get someone out to you right away. Can I have your name and the address?"</p>
-            </div>
-            <div style="display: flex; gap: 12px; margin-bottom: 16px;">
-                <div style="width: 40px; height: 40px; background: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;">👤</div>
-                <div style="background: #333; padding: 12px 16px; border-radius: 12px;">
-                    <p style="color: white; margin: 0;">"Sarah Johnson, 4521 Wilshire Blvd, Los Angeles."</p>
-                </div>
-            </div>
-            <div style="background: var(--color-dark-secondary); padding: 20px; border-radius: 12px;">
-                <p style="color: white; margin: 0;">"Thank you, Sarah. I'm sending this as an emergency to our on-call technician, Mike. He'll be there within 45 minutes. Is it safe to turn off the main water valve?"</p>
-            </div>
-            <p style="text-align: center; margin-top: 24px; font-size: 14px; opacity: 0.6;">📞 Call (310) 555-0199 to hear the full demo</p>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section class="section-light" style="background: white;">
-    <div class="container" style="max-width: 800px;">
-        <h2 style="text-align: center;">Questions? We've got answers.</h2>
-        <div style="margin-top: 48px;">
-            <div class="faq-item">
-                <h4>Does it sound like a robot?</h4>
-                <p style="margin-top: 8px; color: var(--color-text-light);">No. Our AI uses natural conversational models. Call our demo line and hear for yourself — most people can't tell it's not human.</p>
-            </div>
-            <div class="faq-item">
-                <h4>What if the caller has an emergency?</h4>
-                <p style="margin-top: 8px; color: var(--color-text-light);">CallHero recognizes emergencies and transfers the call to your on-call technician immediately. It also sends an SMS alert so your team knows within seconds.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Can it handle my specific services and pricing?</h4>
-                <p style="margin-top: 8px; color: var(--color-text-light);">Yes. We train CallHero on your business — services, pricing, service area, hours, and policies. It becomes an expert on YOUR business within 48 hours.</p>
-            </div>
-            <div class="faq-item">
-                <h4>How long does setup take?</h4>
-                <p style="margin-top: 8px; color: var(--color-text-light);">48 hours. We handle everything: phone number, knowledge base training, calendar integration, and testing. You just approve the script.</p>
-            </div>
-            <div class="faq-item">
-                <h4>What if I already have a receptionist?</h4>
-                <p style="margin-top: 8px; color: var(--color-text-light);">CallHero handles after-hours, overflow, and weekends. Your human receptionist can focus on in-person customers while CallHero catches everything else.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-    <div class="container">
-        <h2>Never miss another call.</h2>
-        <p style="font-size: 20px; opacity: 0.9; max-width: 600px; margin: 0 auto 32px;">Join 50+ local businesses already using CallHero to book more appointments and recover lost revenue.</p>
-        <a href="#" class="btn">Start Your Free Trial →</a>
-        <p style="margin-top: 16px; font-size: 14px; opacity: 0.8;">14 days free. No credit card. No setup fee. Cancel anytime.</p>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 CallHero. All rights reserved.</p>
-    <p style="margin-top: 8px;">Built with ❤️ in Los Angeles</p>
-</footer>
-
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="site.jsx"></script>
 </body>
 </html>
